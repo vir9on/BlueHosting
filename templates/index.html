@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main-content">
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon card-icon-panel"></div>
+            <div class="card-title">Удобная панель управления</div>
+            <div class="card-text">С нашей панелью управления, управлять сервером легко и просто с ней справится как опытный пользователь так и новичок.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon card-icon-support"></div>
+            <div class="card-title">Техническая поддержка</div>
+            <div class="card-text">Наша техническая поддержка работает "7" дней в неделю "24" часа в сутки "365" дней в году. Мы готовы помочь вам в любое время суток.</div>
+        </div>
+    </div>
+    <div class="news-block">
+        <div class="news-title">News</div>
+        <div class="news-content">
+            К сожалению, на данный момент на хостинге нет новостей<br>
+            <a href="#" class="news-link">Смотреть новости в сообществе VK</a>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block modals %}
+<div class="modal-auth" id="modal-auth">
+    <div class="modal-auth-content">
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="tab-login">Вход</button>
+            <button class="auth-tab" id="tab-register">Регистрация</button>
+        </div>
+        <form class="auth-form" id="form-login">
+            <input type="text" id="login-login" placeholder="Email или логин" required>
+            <input type="password" id="login-password" placeholder="Пароль" required>
+            <div id="login-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;margin-bottom:2px;"></div>
+            <button type="submit" class="btn-blue" style="width:100%">Войти</button>
+        </form>
+        <form class="auth-form" id="form-register" style="display:none;">
+            <input type="text" id="register-name" placeholder="Имя" required>
+            <input type="text" id="register-login" placeholder="Логин" required>
+            <input type="email" id="register-email" placeholder="Почта" required>
+            <input type="password" id="register-password" placeholder="Пароль" required>
+            <div id="register-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;margin-bottom:2px;"></div>
+            <button type="submit" class="btn-blue" style="width:100%">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Login form handling
+    const formLogin = document.getElementById('form-login');
+    if (formLogin) {
+        formLogin.onsubmit = async function(e) {
+            e.preventDefault();
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'username': document.getElementById('login-login').value,
+                    'password': document.getElementById('login-password').value
+                })
+            });
+            const data = await response.json();
+            if (data.success) {
+                window.location.reload();
+            } else {
+                document.getElementById('login-error').textContent = data.error;
+            }
+        };
+    }
+
+    // Register form handling
+    const formRegister = document.getElementById('form-register');
+    if (formRegister) {
+        formRegister.onsubmit = async function(e) {
+            e.preventDefault();
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    'username': document.getElementById('register-login').value,
+                    'email': document.getElementById('register-email').value,
+                    'password': document.getElementById('register-password').value
+                })
+            });
+            const data = await response.json();
+            if (data.success) {
+                window.location.reload();
+            } else {
+                document.getElementById('register-error').textContent = data.error;
+            }
+        };
+    }
+
+    // Tab switching
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    if (tabLogin && tabRegister) {
+        tabLogin.onclick = function() {
+            tabLogin.classList.add('active');
+            tabRegister.classList.remove('active');
+            formLogin.style.display = '';
+            formRegister.style.display = 'none';
+        };
+        tabRegister.onclick = function() {
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+            formRegister.style.display = '';
+            formLogin.style.display = 'none';
+        };
+    }
+});
+</script>
+{% endblock %} 

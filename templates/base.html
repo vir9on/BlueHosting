@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Blue-Hosting{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{{ url_for('index') }}" id="logo-link" class="logo">
+                <span class="logo-blue">Blue</span> <span class="logo-hosting">HOSTING</span>
+            </a>
+            <nav>
+                <a href="{{ url_for('index') }}" class="active" id="nav-main">Главная</a>
+                <a href="{{ url_for('servers') }}" id="nav-servers">Сервера</a>
+                <a href="{{ url_for('tariffs') }}" id="nav-tariffs">Тарифы</a>
+                <a href="{{ url_for('support') }}" id="nav-support">Поддержка</a>
+                <a href="{{ url_for('finance') }}" id="nav-finance">Финансы</a>
+                <a href="{{ url_for('stats') }}" id="nav-stats">Статистика</a>
+            </nav>
+            <div class="header-icons">
+                {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                <button class="btn-blue" id="admin-btn">Админ</button>
+                {% endif %}
+                <a href="#" class="top-link">Пополнить</a>
+                <div class="balance">
+                    <span class="icon-balance"></span>
+                    <span id="user-balance">{{ current_user.balance|default(0)|round(2) }} RUB</span>
+                </div>
+                <span class="icon-message"></span>
+                <span class="icon-bell"></span>
+                <span class="icon-user" id="user-icon"></span>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <div class="footer-left">2025© Blue Hosting 1.0</div>
+            <div class="footer-right">
+                <a href="#">Дискорд</a> |
+                <a href="#">Сообщество VK</a> |
+                Пользователей на сайте: {{ user_count|default(1) }}
+            </div>
+        </footer>
+    </div>
+
+    {% block modals %}{% endblock %}
+    {% block scripts %}{% endblock %}
+</body>
+</html> 

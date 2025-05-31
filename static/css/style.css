@@ -1,0 +1,264 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #18191c;
+    color: #fff;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #23242a;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-blue {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #338cff;
+}
+
+.logo-hosting {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #bfc9db;
+    text-decoration: none;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+    color: #338cff;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-blue {
+    background: #338cff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 32px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-blue:hover {
+    background: #2196f3;
+}
+
+.top-link {
+    color: #338cff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.balance {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Card styles */
+.cards {
+    display: flex;
+    gap: 32px;
+    margin: 48px 0;
+}
+
+.card {
+    background: #181f2a;
+    border-radius: 22px;
+    box-shadow: 0 0 18px 2px #2196f399, 0 0 0 2px #338cff22;
+    border: 2px solid #23242a;
+    padding: 32px;
+    flex: 1;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #338cff;
+}
+
+.card-text {
+    color: #bfc9db;
+    line-height: 1.5;
+}
+
+/* News block styles */
+.news-block {
+    background: #181f2a;
+    border-radius: 22px;
+    box-shadow: 0 0 18px 2px #2196f399, 0 0 0 2px #338cff22;
+    border: 2px solid #23242a;
+    padding: 32px;
+    margin-bottom: 48px;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #338cff;
+    margin-bottom: 18px;
+}
+
+.news-content {
+    color: #bfc9db;
+    line-height: 1.5;
+}
+
+.news-link {
+    color: #338cff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Modal styles */
+.modal-auth {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 18, 30, 0.75);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-auth.show {
+    display: flex;
+}
+
+.modal-auth-content {
+    background: #181f2a;
+    border-radius: 22px;
+    box-shadow: 0 0 48px 8px #2196f3cc, 0 0 0 2px #338cff;
+    padding: 36px 32px 28px 32px;
+    min-width: 320px;
+    max-width: 90vw;
+    position: relative;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.auth-tab {
+    background: transparent;
+    color: #bfc9db;
+    border: none;
+    padding: 8px 24px;
+    font-size: 1.08rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.auth-tab.active {
+    color: #338cff;
+    font-weight: 700;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.auth-form input {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid #338cff;
+    background: #141a26;
+    color: #fff;
+    font-size: 1.08rem;
+    outline: none;
+}
+
+/* Footer styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-top: 1px solid #23242a;
+    color: #bfc9db;
+}
+
+.footer-right a {
+    color: #338cff;
+    text-decoration: none;
+}
+
+/* Profile menu styles */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #181f2a;
+    border-radius: 12px;
+    box-shadow: 0 0 18px 2px #2196f399;
+    padding: 12px 0;
+    min-width: 180px;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 24px;
+    color: #bfc9db;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.profile-menu a:hover {
+    background: #23242a;
+    color: #338cff;
+} 

@@ -1,0 +1,2101 @@
+<!-- что тут<!DOCTYPE html> -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue-Hosting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" id="logo-link" class="logo"><span class="logo-blue">Blue</span> <span class="logo-hosting">HOSTING</span></a>
+            <nav>
+                <a href="#" class="active" id="nav-main">Главная</a>
+                <a href="#" id="nav-servers">Сервера</a>
+                <a href="#" id="nav-tariffs">Тарифы</a>
+                <a href="#" id="nav-support">Поддержка</a>
+                <a href="#" id="nav-finance">Финансы</a>
+                <a href="#" id="nav-stats">Статистика</a>
+            </nav>
+            <div class="header-icons">
+                <button class="btn-blue" id="admin-btn" style="display:none;margin-right:12px;">Админ</button>
+                <a href="#" class="top-link">Пополнить</a>
+                <div class="balance"> <span class="icon-balance"></span> 0.00 RUB</div>
+                <span class="icon-message"></span>
+                <span class="icon-bell"></span>
+                <span class="icon-user" id="user-icon"></span>
+            </div>
+        </header>
+        <main id="main-content">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon card-icon-panel"></div>
+                    <div class="card-title">Удобная панель управления</div>
+                    <div class="card-text">С нашей панелью управления, управлять сервером легко и просто с ней справится как опытный пользователь так и новичок.</div>
+                </div>
+                <div class="card">
+                    <div class="card-icon card-icon-support"></div>
+                    <div class="card-title">Техническая поддержка</div>
+                    <div class="card-text">Наша техническая поддержка работает "7" дней в неделю "24" часа в сутки "365" дней в году. Мы готовы помочь вам в любое время суток.</div>
+                </div>
+            </div>
+            <div class="news-block">
+                <div class="news-title">News</div>
+                <div class="news-content">
+                    К сожалению, на данный момент на хостинге нет новостей<br>
+                    <a href="#" class="news-link">Смотреть новости в сообществе VK</a>
+                </div>
+            </div>
+        </main>
+        <div id="tariffs-page" style="display:none;">
+            <div class="tariffs-block" style="flex-direction:column;align-items:center;text-align:center;margin-top:48px;display:flex;justify-content:center;gap:32px;">
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:0;">
+                    <span style="color:#2196f3;font-size:2.1rem;font-weight:700;letter-spacing:1px;text-shadow:0 0 12px #2196f3, 0 0 2px #338cff;">Тарифы</span>
+                    <span style="color:#fff;font-size:1.25rem;font-weight:700;margin-top:18px;">Выберите игру</span>
+                </div>
+                <div style="display:flex;justify-content:center;align-items:center;width:100%;margin-bottom:18px;gap:18px;">
+                    <button id="tariff-left" style="width:48px;height:48px;background:#23242a;border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;cursor:pointer;box-shadow:0 0 12px #111;transition:background 0.2s;z-index:2;">&#60;</button>
+                    <button id="tariff-right" style="width:48px;height:48px;background:#23242a;border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;cursor:pointer;box-shadow:0 0 12px #111;transition:background 0.2s;z-index:2;">&#62;</button>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;width:100%;">
+                    <div class="slider-fade-wrap">
+                        <div id="tariff-slider" style="overflow-x:auto;scroll-behavior:smooth;display:flex;gap:48px;padding:8px 0;max-width:1400px;min-width:900px;width:100%;">
+                            <div style="min-width:300px;max-width:300px;height:88px;"></div>
+                            <button class="btn-blue rust-tariff-btn">
+                                <img src="img/rust.jpg" alt="Rust" class="rust-tariff-img" draggable="false" style="margin-left:-12px;">
+                                <div class="rust-tariff-info">
+                                    <div class="rust-tariff-title">Rust</div>
+                                    <div class="rust-tariff-price">от 300₽</div>
+                                </div>
+                            </button>
+                            <button class="btn-blue rust-tariff-btn" disabled>
+                                <img src="img/ark.png" alt="ARK" class="rust-tariff-img" draggable="false" style="margin-left:-12px;">
+                                <div class="rust-tariff-info">
+                                    <div class="rust-tariff-title">ARK</div>
+                                    <div class="rust-tariff-price">Скоро</div>
+                                </div>
+                            </button>
+                            <button class="btn-blue rust-tariff-btn" disabled>
+                                <img src="img/minecraft.svg" alt="Minecraft" class="rust-tariff-img" draggable="false" style="margin-left:-12px;">
+                                <div class="rust-tariff-info">
+                                    <div class="rust-tariff-title">Minecraft</div>
+                                    <div class="rust-tariff-price">Скоро</div>
+                                </div>
+                            </button>
+                            <button class="btn-blue rust-tariff-btn" disabled>
+                                <img src="img/csgo.jpg" alt="Counter Strike 2" class="rust-tariff-img" draggable="false" style="margin-left:-12px;">
+                                <div class="rust-tariff-info">
+                                    <div class="rust-tariff-title cs-tariff-title">Counter Strike 2</div>
+                                    <div class="rust-tariff-price">Скоро</div>
+                                </div>
+                            </button>
+                            <button class="btn-blue rust-tariff-btn" disabled>
+                                <img src="img/DayZ.jpg" alt="DayZ" class="rust-tariff-img" draggable="false">
+                                <div class="rust-tariff-info">
+                                    <div class="rust-tariff-title">DayZ</div>
+                                    <div class="rust-tariff-price">Скоро</div>
+                                </div>
+                            </button>
+                            <div style="min-width:300px;max-width:300px;height:88px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tariff-middle-buttons" style="display:flex;justify-content:center;gap:24px;margin:32px 0 0 0;">
+                    <button class="btn-blue tariff-action-btn">неделя</button>
+                    <button class="btn-blue tariff-action-btn">месяц</button>
+                </div>
+                <div id="tariff-menu-rust-week" class="tariff-menu" style="display:none;">
+                    <div class="tariff-card">
+                        <div class="tariff-title">Rust License</div>
+                        <div>
+                            <span class="tariff-oldprice">420</span>
+                            <span class="tariff-price">370 ₽/нед</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-card">
+                        <div class="tariff-title">Devblog 266</div>
+                        <div>
+                            <span class="tariff-oldprice">320</span>
+                            <span class="tariff-price">270 ₽/нед</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-card popular">
+                        <div class="tariff-title">Devblog 236</div>
+                        <div>
+                            <span class="tariff-oldprice">250</span>
+                            <span class="tariff-price">220 ₽/нед</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                        </div>
+                <div id="tariff-menu-rust-week-2" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-week-3" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-week-4" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div class="tariff-menu extra-tariffs"></div>
+                <div class="tariff-menu extra-tariffs"></div>
+                <div id="tariff-menu-rust-month" class="tariff-menu" style="display:none;">
+                    <div class="tariff-card popular">
+                        <div class="tariff-title">Rust License</div>
+                        <div class="tariff-discount">Скидка -10%</div>
+                        <div>
+                            <span class="tariff-oldprice">1500</span>
+                            <span class="tariff-price">1350 ₽/мес</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-card popular">
+                        <div class="tariff-title">Devblog 266</div>
+                        <div class="tariff-discount">Скидка -10%</div>
+                        <div>
+                            <span class="tariff-oldprice">1100</span>
+                            <span class="tariff-price">990 ₽/мес</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-card">
+                        <div class="tariff-title">Devblog 236</div>
+                        <div class="tariff-discount">Скидка -10%</div>
+                        <div>
+                            <span class="tariff-oldprice">900</span>
+                            <span class="tariff-price">810 ₽/мес</span>
+                        </div>
+                        <button class="tariff-order">Заказать</button>
+                        <ul>
+                            <li><i class="fas fa-microchip" style="color:#338cff;"></i> x3 CPU</li>
+                            <li><i class="fas fa-memory" style="color:#338cff;"></i> 8 Гб RAM</li>
+                            <li><i class="fas fa-hdd" style="color:#338cff;"></i> 30 Гб HHD</li>
+                            <li><i class="fas fa-box" style="color:#338cff;"></i> 3 Бэкапа</li>
+                            <li><i class="fas fa-shield-alt" style="color:#338cff;"></i> DDoS защита</li>
+                            <li><i class="fas fa-headphones" style="color:#338cff;"></i> 24/7 поддержка</li>
+                            <li><i class="fas fa-check-square" style="color:#2ecc40;"></i> Поддержка Devblog</li>
+                        </ul>
+                    </div>
+                        </div>
+                <div id="tariff-menu-rust-month-2" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-month-3" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-month-4" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-month-5" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+                <div id="tariff-menu-rust-month-6" class="tariff-menu" style="display:none;margin-top:32px;"></div>
+            </div>
+        </div>
+        <div id="servers-page" style="display:none;">
+            <div class="servers-block" style="flex-direction:column;align-items:center;text-align:center;margin-top:48px;display:flex;justify-content:center;gap:32px;">
+                <span style="color:#2196f3;font-size:2.1rem;font-weight:700;letter-spacing:1px;text-shadow:0 0 12px #2196f3, 0 0 2px #338cff;">Мои сервера</span>
+                <div id="user-servers-list" style="width:100%;max-width:700px;margin:0 auto;"></div>
+            </div>
+        </div>
+        <div class="profile-page" id="profile-page" style="display:none">
+            <div class="profile-card">
+                <div class="profile-row" style="flex-direction:row;align-items:flex-start;gap:32px;">
+                    <div class="profile-avatar-col" style="display:flex;flex-direction:column;align-items:center;gap:12px;min-width:80px;">
+                        <span class="profile-avatar"></span>
+                        <div class="profile-balance-under-avatar">
+                            <span class="profile-balance-label">Мой баланс:</span> <span class="profile-balance-amount">0.00 <span class="profile-balance-currency">₽</span></span>
+                        </div>
+                    </div>
+                    <div class="profile-main" style="display:flex;flex-direction:column;gap:10px;min-width:180px;margin-top:4px;">
+                        <div class="profile-name"><span style="color:#fff;opacity:0.7;">Логин:</span> <b id="profile-fullname">Имя пользователя</b> <span class="profile-edit" title="Редактировать">✎</span></div>
+                        <div class="profile-id"><span style="color:#fff;opacity:0.7;">id:</span> <span id="profile-id">#000000</span> <span class="profile-copy" title="Скопировать">📋</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Страница поддержки в виде чата (как обычная страница) -->
+        <div id="support-page" style="display:none;position:relative;width:100%;height:auto;padding:48px 0;">
+          <div style="display:flex;justify-content:center;align-items:stretch;gap:32px;max-width:1100px;width:100%;margin:0 auto;height:550px;">
+            <!-- Список чатов -->
+            <div id="support-chat-list" style="background:#181f2a;border-radius:18px;box-shadow:0 0 18px 2px #338cff33,0 0 0 2px #338cff22;width:260px;height:100%;min-height:unset;padding:18px 0;display:flex;flex-direction:column;overflow-y:auto;">
+              <div style="font-size:1.18rem;font-weight:700;color:#338cff;padding:0 24px 18px 24px;">Чаты</div>
+              <div class="support-chat-item active" style="padding:12px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;background:#23242a;border-radius:12px;margin:0 12px 8px 12px;">
+                <span style="background:#338cff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:1.3rem;font-weight:900;">S</span>
+                <div>
+                  <div style="font-weight:700;color:#fff;">Поддержка</div>
+                  <div style="font-size:0.98rem;color:#bfc9db;">Онлайн</div>
+                </div>
+              </div>
+            </div>
+            <!-- Окно чата -->
+            <div id="support-chat-window" style="flex:1;background:#181f2a;border-radius:18px;box-shadow:0 0 18px 2px #338cff33,0 0 0 2px #338cff22;height:100%;display:flex;flex-direction:column;max-width:700px;width:100%;min-height:unset;">
+              <div id="support-chat-title" style="font-size:1.3rem;font-weight:900;color:#338cff;padding:0 32px 0 32px;margin-bottom:10px;">Чат поддержки</div>
+              <div id="support-chat-messages" style="flex:1;overflow-y:auto;padding:0 32px 0 32px;display:flex;flex-direction:column;gap:14px;background:#161a22;">
+                <!-- Сообщения будут добавляться сюда -->
+              </div>
+              <form id="support-chat-form" style="display:flex;gap:12px;padding:0 32px 0 32px;background:transparent;margin-top:auto;">
+                <input id="support-chat-input" type="text" placeholder="Введите сообщение..." autocomplete="off" style="flex:1;padding:12px 18px;border-radius:12px;border:1.5px solid #338cff;background:#141a26;color:#fff;font-size:1.08rem;outline:none;">
+                <button type="submit" class="btn-blue" style="padding:12px 32px;border-radius:12px;font-weight:700;font-size:1.08rem;margin-left:12px;">Отправить</button>
+              </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-left">2025© Blue Hosting 1.0</div>
+            <div class="footer-right">
+                <a href="#">Дискорд</a> |
+                <a href="#">Сообщество VK</a> |
+                Пользователей на сайте: 1
+            </div>
+        </footer>
+    </div>
+    <div class="profile-menu" id="profile-menu">
+        <a href="#" id="profile-menu-link">Профиль</a>
+        <a href="#" id="logout-btn">Выйти</a>
+    </div>
+    <!-- Модальное окно авторизации -->
+    <div class="modal-auth" id="modal-auth">
+        <div class="modal-auth-content">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-login">Вход</button>
+                <button class="auth-tab" id="tab-register">Регистрация</button>
+            </div>
+            <form class="auth-form" id="form-login">
+                <input type="text" id="login-login" placeholder="Email или логин" required>
+                <input type="password" id="login-password" placeholder="Пароль" required>
+                <div id="login-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;margin-bottom:2px;"></div>
+                <button type="submit" class="btn-blue" style="width:100%">Войти</button>
+            </form>
+            <form class="auth-form" id="form-register" style="display:none;">
+                <input type="text" id="register-name" placeholder="Имя" required>
+                <input type="text" id="register-login" placeholder="Логин" required>
+                <input type="email" id="register-email" placeholder="Почта" required>
+                <input type="password" id="register-password" placeholder="Пароль" required>
+                <div id="register-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;margin-bottom:2px;"></div>
+                <button type="submit" class="btn-blue" style="width:100%">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <div id="register-success-toast" style="display:none;position:fixed;top:38px;left:50%;transform:translateX(-50%);min-width:320px;max-width:90vw;background:#181f2a;border-radius:22px;box-shadow:0 0 48px 8px #2ecc4099,0 0 0 2px #2ecc40;padding:22px 32px 18px 32px;color:#2ecc40;font-weight:700;font-size:1.08rem;z-index:3000;transition:opacity 0.3s;opacity:0;border:2px solid #2ecc40;text-align:center;">Вы успешно зарегистрировались!</div>
+    <div id="register-error-toast" style="display:none;position:fixed;top:38px;left:50%;transform:translateX(-50%);min-width:320px;max-width:90vw;background:#181f2a;border-radius:22px;box-shadow:0 0 48px 8px #ff525299,0 0 0 2px #ff5252;padding:22px 32px 18px 32px;color:#ff5252;font-weight:700;font-size:1.08rem;z-index:3000;transition:opacity 0.3s;opacity:0;border:2px solid #ff5252;text-align:center;">Ошибка</div>
+    <div id="toast-container" style="position:fixed;top:38px;left:50%;transform:translateX(-50%);z-index:3000;display:flex;flex-direction:column;gap:16px;align-items:center;pointer-events:none;"></div>
+    <div class="modal-topup" id="modal-topup" style="display:none;position:fixed;z-index:2100;left:0;top:0;width:100vw;height:100vh;background:rgba(10,18,30,0.75);align-items:center;justify-content:center;">
+        <div class="modal-topup-content" style="background:#181f2a;border-radius:22px;box-shadow:0 0 48px 8px #2196f3cc,0 0 0 2px #338cff;padding:36px 32px 28px 32px;min-width:320px;max-width:90vw;position:relative;display:flex;flex-direction:column;align-items:stretch;">
+            <span class="close-topup" id="close-topup" style="position:absolute;top:16px;right:22px;font-size:2rem;color:#338cff;cursor:pointer;transition:color 0.2s;">&times;</span>
+            <div style="font-size:1.3rem;font-weight:700;color:#2196f3;text-align:center;margin-bottom:18px;">Пополнение баланса</div>
+            <form id="form-topup" style="display:flex;flex-direction:column;gap:18px;">
+                <input type="number" id="topup-amount" placeholder="Сумма, ₽" min="1" max="99999" step="1" style="padding:10px 14px;border-radius:8px;border:1.5px solid #338cff;background:#141a26;color:#fff;font-size:1rem;outline:none;" required>
+                <div id="topup-quick" style="display:flex;gap:12px;margin:4px 0 0 0;justify-content:center;">
+                    <button type="button" class="btn-blue topup-quick-btn" data-amount="100" style="padding:6px 18px;font-size:1rem;">100</button>
+                    <button type="button" class="btn-blue topup-quick-btn" data-amount="200" style="padding:6px 18px;font-size:1rem;">200</button>
+                    <button type="button" class="btn-blue topup-quick-btn" data-amount="300" style="padding:6px 18px;font-size:1rem;">300</button>
+                    <button type="button" class="btn-blue topup-quick-btn" data-amount="500" style="padding:6px 18px;font-size:1rem;">500</button>
+                    <button type="button" class="btn-blue topup-quick-btn" data-amount="1000" style="padding:6px 18px;font-size:1rem;">1000</button>
+                </div>
+                <select id="topup-method" style="padding:10px 14px;border-radius:8px;border:1.5px solid #338cff;background:#141a26;color:#fff;font-size:1rem;outline:none;">
+                    <option value="card">Банковская карта</option>
+                    <option value="yoomoney">ЮMoney</option>
+                    <option value="qiwi">QIWI</option>
+                </select>
+                <div id="topup-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;text-align:center;"></div>
+                <button type="submit" class="btn-blue" style="width:100%">Пополнить</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-order" id="modal-order" style="display:none;position:fixed;z-index:2100;left:0;top:0;width:100vw;height:100vh;background:rgba(10,18,30,0.75);align-items:center;justify-content:center;">
+        <div class="modal-order-content" style="background:#181f2a;border-radius:22px;box-shadow:0 0 48px 8px #2196f3cc,0 0 0 2px #338cff;padding:36px 32px 28px 32px;min-width:320px;max-width:90vw;position:relative;display:flex;flex-direction:column;align-items:stretch;">
+            <span class="back-order" id="back-order" style="position:absolute;top:16px;left:22px;font-size:2rem;color:#2196f3;cursor:pointer;transition:color 0.2s;user-select:none;">&#8592;</span>
+            <span class="close-order" id="close-order" style="position:absolute;top:16px;right:22px;font-size:2rem;color:#338cff;cursor:pointer;transition:color 0.2s;">&times;</span>
+            <div style="font-size:1.3rem;font-weight:700;color:#2196f3;text-align:center;margin-bottom:18px;">Оформление заказа</div>
+            <div class="order-info" style="margin-bottom:24px;">
+                <div class="order-title" style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#fff;">Название тарифа: <span id="order-tariff-name"></span></div>
+                <div class="order-price" style="font-size:1.1rem;margin-bottom:8px;color:#fff;">Стоимость: <span id="order-tariff-price"></span></div>
+                <div class="order-period" style="font-size:1.1rem;margin-bottom:8px;color:#fff;">Период: <span id="order-tariff-period"></span></div>
+                <div class="order-features" style="margin-top:16px;">
+                    <div style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#fff;">Характеристики:</div>
+                    <ul id="order-tariff-features" style="list-style:none;padding:0;margin:0;color:#aaa;"></ul>
+                </div>
+            </div>
+            <div class="order-balance" style="margin-bottom:24px;padding:16px;background:#141a26;border-radius:8px;border:1px solid #338cff;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                    <span style="color:#fff;">Ваш баланс:</span>
+                    <span id="order-user-balance" style="color:#338cff;font-weight:700;">0.00 ₽</span>
+                </div>
+                <button id="pay-with-balance" class="btn-blue" style="width:100%;margin-bottom:10px;">Оплатить с баланса</button>
+                <a href="#" id="show-other-payments" style="display:block;text-align:center;color:#338cff;font-size:1rem;margin-top:8px;text-decoration:underline;cursor:pointer;">Другие способы оплаты</a>
+            </div>
+            <div class="order-payment-methods" id="order-payment-methods" style="margin-bottom:24px;display:none;">
+                <div style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:#fff;">Другие способы оплаты:</div>
+                <select id="order-payment-method" style="width:100%;padding:10px 14px;border-radius:8px;border:1.5px solid #338cff;background:#141a26;color:#fff;font-size:1rem;outline:none;margin-bottom:12px;">
+                    <option value="card">Банковская карта</option>
+                    <option value="yoomoney">ЮMoney</option>
+                    <option value="qiwi">QIWI</option>
+                </select>
+                <button id="pay-with-method" class="btn-blue" style="width:100%;">Оплатить выбранным способом</button>
+            </div>
+            <div id="order-error" style="color:#ff5252;min-height:18px;font-size:0.98rem;text-align:center;"></div>
+        </div>
+    </div>
+    <style>
+    .profile-card {
+        background: #181f2a;
+        border-radius: 22px;
+        box-shadow: 0 0 18px 2px #2196f399, 0 0 0 2px #338cff;
+        border: 2px solid #338cff;
+        padding: 32px 48px 24px 48px;
+        max-width: 520px;
+        margin: 32px auto 0 auto;
+        color: #fff;
+    }
+    .profile-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    .profile-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #18191c;
+        display: inline-block;
+        margin-right: 8px;
+    }
+    .profile-main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 180px;
+        margin-top: 4px;
+    }
+    .profile-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .profile-id {
+        font-size: 1.15rem;
+        color: #aaa;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    #profile-id {
+        font-size: 1.22rem;
+        font-weight: 700;
+        color: #338cff;
+        margin-left: 2px;
+    }
+    .profile-edit {
+        cursor: pointer;
+        color: #338cff;
+        font-size: 1.1rem;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    .profile-edit:hover {
+        opacity: 1;
+    }
+    .profile-copy {
+        cursor: pointer;
+        color: #338cff;
+        font-size: 1.1rem;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    .profile-copy:hover {
+        opacity: 1;
+    }
+    .profile-balance-under-avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 1.08rem;
+        color: #fff;
+        font-weight: 500;
+    }
+    .profile-balance-label {
+        color: #338cff;
+        font-weight: 700;
+        font-size: 1.02rem;
+        margin-bottom: 2px;
+    }
+    .profile-balance-amount {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+    }
+    .profile-balance-currency {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #338cff;
+        margin-left: 2px;
+    }
+    .profile-avatar-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        min-width: 80px;
+    }
+    #tariff-slider {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        transition: scroll-left 0.25s cubic-bezier(.4,0,.2,1);
+    }
+    #tariff-slider::-webkit-scrollbar {
+        display: none;
+    }
+    .slider-fade-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        min-width: 900px;
+        margin: 0 auto;
+    }
+    .slider-fade-wrap::before,
+    .slider-fade-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 48px;
+        z-index: 3;
+        pointer-events: none;
+    }
+    .slider-fade-wrap::before {
+        left: 0;
+        width: 480px;
+        background: linear-gradient(
+            to right,
+            #18191c 0%,
+            #18191c 15%,
+            rgba(24,25,28,0.12) 40%,
+            rgba(24,25,28,0.06) 80%,
+            rgba(24,25,28,0.0) 100%
+        );
+    }
+    .slider-fade-wrap::after {
+        right: 0;
+        width: 480px;
+        background: linear-gradient(
+            to left,
+            #18191c 0%,
+            #18191c 15%,
+            rgba(24,25,28,0.12) 40%,
+            rgba(24,25,28,0.06) 80%,
+            rgba(24,25,28,0.0) 100%
+        );
+    }
+    .rust-tariff-btn, .rust-tariff-btn * {
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    .rust-tariff-img {
+        pointer-events: none;
+    }
+    .rust-tariff-btn.tariff-btn-active {
+        box-shadow: 0 0 0 3px #2196f3, 0 0 18px 2px #2196f399;
+        background: #1a2333;
+        border: 2px solid #2196f3;
+        color: #fff;
+    }
+    .tariff-menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .tariff-card {
+        background: #23242a;
+        border-radius: 18px;
+        box-shadow: 0 0 18px 2px #18191c99, 0 0 0 2px #338cff22;
+        border: 2px solid #23242a;
+        padding: 28px 32px 24px 32px;
+        color: #fff;
+        min-width: 260px;
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .tariff-card.popular::before {
+        content: 'Популярно';
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2196f3;
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 2px 18px;
+    }
+    .tariff-card .tariff-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+    .tariff-card .tariff-price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 8px 0 4px 0;
+    }
+    .tariff-card .tariff-oldprice {
+        color: #aaa;
+        text-decoration: line-through;
+        font-size: 1.1rem;
+        margin-right: 8px;
+    }
+    .tariff-card .tariff-discount {
+        color: #ff5252;
+        background: #18191c;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 2px 10px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+    .tariff-card .tariff-order {
+        margin: 18px 0 10px 0;
+        background: #338cff;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .tariff-card .tariff-order:hover {
+        background: #2196f3;
+    }
+    .tariff-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .tariff-card ul li {
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .tariff-action-btn {
+        min-width: 200px;
+        font-size: 1.08rem;
+        font-weight: 700;
+        padding: 12px 32px;
+        border-radius: 12px;
+        background: #338cff;
+        color: #fff;
+        border: none;
+        box-shadow: 0 0 12px #111, 0 0 0 2px #2196f3;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s;
+        outline: none;
+    }
+    .tariff-action-btn:hover {
+        background: #2196f3;
+        box-shadow: 0 0 18px #2196f3, 0 0 0 2px #338cff;
+    }
+    .tariff-action-btn.tariff-btn-active {
+        background: #1a2333;
+        border: 2px solid #2196f3;
+        color: #fff;
+        box-shadow: 0 0 0 3px #2196f3, 0 0 18px 2px #2196f399;
+    }
+    .rust-tariff-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .rust-tariff-btn:disabled .rust-tariff-img {
+        filter: grayscale(100%);
+    }
+    .rust-tariff-btn:disabled .rust-tariff-title,
+    .rust-tariff-btn:disabled .rust-tariff-price {
+        opacity: 0.7;
+    }
+    .server-panel-sidebar {
+      width: 260px;
+      background: #23242a;
+      padding: 32px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-height: 100vh;
+    }
+    .server-panel-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #bfc9db;
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 500;
+      padding: 10px 32px;
+      border-radius: 8px 0 0 8px;
+      margin: 2px 0;
+      transition: background 0.18s, color 0.18s;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+    }
+    .server-panel-nav.active, .server-panel-nav:hover {
+      background: #181f2a;
+      color: #338cff;
+    }
+    .server-panel-nav.active {
+      border-left: 4px solid #338cff;
+      font-weight: 700;
+    }
+    #server-panel-back {
+      margin-top: 32px;
+      color: #338cff;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 8px;
+      background: #181f2a;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s;
+      display: block;
+    }
+    #server-panel-back:hover {
+      background: #338cff;
+      color: #fff;
+    }
+    .server-panel-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .server-panel-tab {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #444a5a;
+      border-radius: 10px;
+      padding: 8px 24px;
+      font-size: 1.08rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      outline: none;
+    }
+    .server-panel-tab:hover {
+      border-color: #338cff;
+      color: #338cff;
+      background: #232f4a;
+    }
+    .server-panel-tab.active {
+      background: #338cff;
+      color: #fff;
+      border-color: #338cff;
+      font-weight: 700;
+    }
+    .logo-blue {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #338cff;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+    .logo-hosting {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      margin-left: 4px;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+    }
+    .blue-badge {
+      display: inline-block;
+      background: #21a1ff;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 36px;
+      border-radius: 999px;
+      box-shadow: 0 0 32px 4px #21a1ff88;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .support-chat-item.active {
+      border: 2px solid #338cff !important;
+      box-shadow: 0 0 12px #338cff44 !important;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        // --- Добавляем админа, если его нет ---
+        let users = [];
+        try {
+            users = JSON.parse(localStorage.getItem('users') || '[]');
+            if (!Array.isArray(users)) users = [];
+        } catch(e) { users = []; }
+        if (!users.find(u => u.login === 'admin')) {
+            users.push({login: 'admin', password: 'admin', id: 1, role: 'admin'});
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // --- Инициализация кнопок переключения периодов ---
+        const periodBtns = document.querySelectorAll('.tariff-action-btn');
+        const weekBlocks = document.querySelectorAll('[id^="tariff-menu-rust-week"]');
+        const monthBlock = document.getElementById('tariff-menu-rust-month');
+        
+        // Обработчик клика по кнопкам периода
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.tariff-action-btn');
+            if (!btn) return;
+            
+            // Удаляем активный класс у всех кнопок
+            periodBtns.forEach(b => b.classList.remove('tariff-btn-active'));
+            // Добавляем активный класс нажатой кнопке
+            btn.classList.add('tariff-btn-active');
+            
+            if (btn.textContent.includes('неделя')) {
+                // Показываем недельные тарифы
+                weekBlocks.forEach(el => el.style.display = 'flex');
+                if (monthBlock) monthBlock.style.display = 'none';
+            } else {
+                // Показываем месячные тарифы
+                weekBlocks.forEach(el => el.style.display = 'none');
+                if (monthBlock) monthBlock.style.display = 'flex';
+            }
+        });
+
+        // --- Вход ---
+        const formLogin = document.getElementById('form-login');
+        const formRegister = document.getElementById('form-register');
+        const loginError = document.getElementById('login-error');
+        const registerError = document.getElementById('register-error');
+        const tabLogin = document.getElementById('tab-login');
+        const tabRegister = document.getElementById('tab-register');
+        const modalAuth = document.getElementById('modal-auth');
+        const adminBtn = document.getElementById('admin-btn');
+
+        if (formLogin) formLogin.onsubmit = function(e) {
+            e.preventDefault();
+            const login = document.getElementById('login-login').value;
+            const password = document.getElementById('login-password').value;
+            let users;
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            // Проверяем, что пользователь существует и не был удалён
+            const user = users.find(u => u.login === login && u.password === password);
+            if (user) {
+                localStorage.setItem('isAuth', 'true');
+                localStorage.setItem('userId', user.id);
+                localStorage.setItem('userLogin', user.login);
+                if (user.role === 'admin' && adminBtn) adminBtn.style.display = '';
+                else if (adminBtn) adminBtn.style.display = 'none';
+                modalAuth.classList.remove('show');
+                loginError.textContent = '';
+                showToast('Вы успешно вошли!', 'success');
+            } else {
+                loginError.textContent = 'Неверный логин или пароль';
+                // Показываем красное уведомление
+                showToast('Неверный логин или пароль', 'error');
+            }
+        };
+
+        if (formRegister) formRegister.onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('register-name').value.trim();
+            const login = document.getElementById('register-login').value.trim();
+            const email = document.getElementById('register-email').value.trim();
+            const password = document.getElementById('register-password').value;
+            let users;
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            // Фильтруем только валидные объекты с полем login
+            users = users.filter(u => u && typeof u === 'object' && 'login' in u);
+            let errors = [];
+            if (!name || !login || !email || !password) {
+                errors.push('Заполните все поля');
+            }
+            const loginNormalized = login.replace(/\s+/g, '').toLowerCase();
+            if (users.find(u => (u.login || '').replace(/\s+/g, '').toLowerCase() === loginNormalized)) {
+                errors.push('Этот логин уже занят');
+            }
+            const emailNormalized = email.replace(/\s+/g, '').toLowerCase();
+            if (users.find(u => (u.email || '').replace(/\s+/g, '').toLowerCase() === emailNormalized)) {
+                errors.push('Эта почта уже зарегистрирована');
+            }
+            if (errors.length > 0) {
+                errors.forEach(msg => showToast(msg, 'error'));
+                registerError.textContent = errors[0];
+                registerError.style.color = '#ff5252';
+                registerError.style.textAlign = 'center';
+                return;
+            }
+            const userId = Math.floor(100000 + Math.random() * 900000);
+            users.push({name, login, email, password, id: userId});
+            localStorage.setItem('users', JSON.stringify(users));
+            registerError.textContent = 'Регистрация успешна! Теперь войдите.';
+            registerError.style.color = '#2ecc40';
+            registerError.style.textAlign = 'center';
+            // Показываем зелёное уведомление
+            showToast('Вы успешно зарегистрировались!', 'success');
+        };
+
+        // --- Показываем кнопку 'Админ', если уже авторизован админ
+        if (localStorage.getItem('isAuth') === 'true') {
+            let users;
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            const user = users.find(u => u.login === localStorage.getItem('userLogin'));
+            if (user && user.role === 'admin' && adminBtn) adminBtn.style.display = '';
+            else if (adminBtn) adminBtn.style.display = 'none';
+        }
+
+        // --- Показываем окно авторизации только если не авторизован ---
+        if (modalAuth && localStorage.getItem('isAuth') !== 'true') {
+            modalAuth.classList.add('show');
+        } else if (modalAuth) {
+            modalAuth.classList.remove('show');
+        }
+
+        // --- Профиль-меню ---
+        const userIcon = document.getElementById('user-icon');
+        const profileMenu = document.getElementById('profile-menu');
+        document.addEventListener('click', function(e) {
+            if (userIcon && userIcon.contains(e.target)) {
+                profileMenu.classList.toggle('show');
+            } else if (!profileMenu.contains(e.target)) {
+                profileMenu.classList.remove('show');
+            }
+        });
+
+        // --- Выход из аккаунта ---
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.onclick = function(e) {
+                e.preventDefault();
+                localStorage.removeItem('isAuth');
+                localStorage.removeItem('userId');
+                localStorage.removeItem('userLogin');
+                if (profileMenu) profileMenu.classList.remove('show');
+                if (modalAuth) modalAuth.classList.add('show');
+                if (adminBtn) adminBtn.style.display = 'none';
+            };
+        }
+
+        const navMain = document.getElementById('nav-main');
+        const navProfile = document.getElementById('nav-profile');
+        const mainContent = document.getElementById('main-content');
+        const profilePage = document.getElementById('profile-page');
+        const navLinks = document.querySelectorAll('nav a');
+        const profileMenuLink = document.getElementById('profile-menu-link');
+        if (profileMenuLink && profilePage && mainContent) {
+            profileMenuLink.onclick = function(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none';
+                profilePage.style.display = '';
+                if (tariffsPage) tariffsPage.style.display = 'none';
+                if (serversPage) serversPage.style.display = 'none';
+                if (adminProfilePage) adminProfilePage.style.display = 'none'; // <-- добавлено
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                profileMenu.classList.remove('show');
+                fillProfileCard();
+            };
+        }
+
+        if (navMain && mainContent && profilePage) {
+            navMain.onclick = function(e) {
+                e.preventDefault();
+                mainContent.style.display = '';
+                profilePage.style.display = 'none';
+                if (tariffsPage) tariffsPage.style.display = 'none';
+                if (serversPage) serversPage.style.display = 'none';
+                if (adminProfilePage) adminProfilePage.style.display = 'none'; // <-- добавлено
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                navMain.classList.add('active');
+            };
+        }
+
+        function fillProfileCard() {
+            const userLogin = localStorage.getItem('userLogin') || '';
+            const userId = localStorage.getItem('userId') || '';
+            document.getElementById('profile-fullname').textContent = userLogin;
+            document.getElementById('profile-id').textContent = '#' + userId;
+        }
+
+        // Копировать ID
+        const profileCopy = document.querySelector('.profile-copy');
+        if (profileCopy) {
+            profileCopy.onclick = function() {
+                const id = document.getElementById('profile-id').textContent.replace('#','');
+                navigator.clipboard.writeText(id);
+                profileCopy.textContent = '✔';
+                setTimeout(()=>{profileCopy.textContent = '📋';}, 1200);
+            };
+        }
+
+        // --- Клик по логотипу открывает главную ---
+        const logoLink = document.getElementById('logo-link');
+        if (logoLink && navMain && mainContent && profilePage) {
+            logoLink.onclick = function(e) {
+                e.preventDefault();
+                mainContent.style.display = '';
+                profilePage.style.display = 'none';
+                if (tariffsPage) tariffsPage.style.display = 'none';
+                if (serversPage) serversPage.style.display = 'none';
+                if (adminProfilePage) adminProfilePage.style.display = 'none'; // <-- добавлено
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                navMain.classList.add('active');
+            };
+        }
+
+        const navTariffs = document.getElementById('nav-tariffs');
+        const tariffsPage = document.getElementById('tariffs-page');
+        if (navTariffs && mainContent && tariffsPage && profilePage) {
+            navTariffs.onclick = function(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none';
+                tariffsPage.style.display = '';
+                profilePage.style.display = 'none';
+                if (serversPage) serversPage.style.display = 'none';
+                if (adminProfilePage) adminProfilePage.style.display = 'none'; // <-- добавлено
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                navTariffs.classList.add('active');
+
+                // --- Автоматически выбираем Rust и категорию "неделя" ---
+                // Снимаем активные классы со всех кнопок игр и периодов
+                    document.querySelectorAll('.rust-tariff-btn').forEach(b => b.classList.remove('tariff-btn-active'));
+                    document.querySelectorAll('.tariff-action-btn').forEach(b => b.classList.remove('tariff-btn-active'));
+                // Активируем первую кнопку Rust
+                const rustBtn = document.querySelector('.rust-tariff-btn');
+                if (rustBtn) rustBtn.classList.add('tariff-btn-active');
+                // Активируем первую кнопку периода (неделя)
+                const weekBtn = document.querySelector('.tariff-action-btn');
+                if (weekBtn) weekBtn.classList.add('tariff-btn-active');
+                // Показываем недельные тарифы, скрываем месячные
+                const weekBlocks = document.querySelectorAll('[id^="tariff-menu-rust-week"], .tariff-menu.extra-tariffs:not([id*="month"])');
+                const monthBlocks = document.querySelectorAll('[id^="tariff-menu-rust-month"]');
+                weekBlocks.forEach(el => el.style.display = 'flex');
+                monthBlocks.forEach(el => el.style.display = 'none');
+            };
+        }
+
+        // --- Переключение вкладок вход/регистрация ---
+        if (tabLogin && tabRegister && formLogin && formRegister) {
+            tabLogin.onclick = function() {
+                tabLogin.classList.add('active');
+                tabRegister.classList.remove('active');
+                formLogin.style.display = '';
+                formRegister.style.display = 'none';
+            };
+            tabRegister.onclick = function() {
+                tabRegister.classList.add('active');
+                tabLogin.classList.remove('active');
+                formRegister.style.display = '';
+                formLogin.style.display = 'none';
+            };
+        }
+
+        // --- Баланс: инициализация и отображение ---
+        function getCurrentUser() {
+            let users = [];
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            const login = localStorage.getItem('userLogin');
+            return users.find(u => u.login === login);
+        }
+        function setCurrentUser(user) {
+            let users = [];
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            const idx = users.findIndex(u => u.login === user.login);
+            if (idx !== -1) { users[idx] = user; }
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+        function updateBalanceUI() {
+            const user = getCurrentUser();
+            let balance = user && user.balance ? parseFloat(user.balance) : 0;
+            // В шапке
+            const balanceDiv = document.querySelector('.balance');
+            if (balanceDiv) balanceDiv.innerHTML = '<span class="icon-balance"></span> ' + balance.toFixed(2) + ' RUB';
+            // В профиле
+            const profileBalance = document.querySelector('.profile-balance-amount');
+            if (profileBalance) profileBalance.innerHTML = balance.toFixed(2) + ' <span class="profile-balance-currency">₽</span>';
+        }
+        // --- При регистрации добавляем balance:0 ---
+        if (formRegister) {
+            const origRegister = formRegister.onsubmit;
+            formRegister.onsubmit = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('register-name').value.trim();
+                const login = document.getElementById('register-login').value.trim();
+                const email = document.getElementById('register-email').value.trim();
+                const password = document.getElementById('register-password').value;
+                let users;
+                try {
+                    users = JSON.parse(localStorage.getItem('users') || '[]');
+                    if (!Array.isArray(users)) users = [];
+                } catch(e) { users = []; }
+                users = users.filter(u => u && typeof u === 'object' && 'login' in u);
+                let errors = [];
+                if (!name || !login || !email || !password) {
+                    errors.push('Заполните все поля');
+                }
+                const loginNormalized = login.replace(/\s+/g, '').toLowerCase();
+                if (users.find(u => (u.login || '').replace(/\s+/g, '').toLowerCase() === loginNormalized)) {
+                    errors.push('Этот логин уже занят');
+                }
+                const emailNormalized = email.replace(/\s+/g, '').toLowerCase();
+                if (users.find(u => (u.email || '').replace(/\s+/g, '').toLowerCase() === emailNormalized)) {
+                    errors.push('Эта почта уже зарегистрирована');
+                }
+                if (errors.length > 0) {
+                    errors.forEach(msg => showToast(msg, 'error'));
+                    registerError.textContent = errors[0];
+                    registerError.style.color = '#ff5252';
+                    registerError.style.textAlign = 'center';
+                    return;
+                }
+                const userId = Math.floor(100000 + Math.random() * 900000);
+                users.push({name, login, email, password, id: userId, balance: 0});
+                localStorage.setItem('users', JSON.stringify(users));
+                registerError.textContent = 'Регистрация успешна! Теперь войдите.';
+                registerError.style.color = '#2ecc40';
+                registerError.style.textAlign = 'center';
+                showToast('Вы успешно зарегистрировались!', 'success');
+            };
+        }
+        // --- При входе: если нет balance, добавить ---
+        if (formLogin) {
+            const origLogin = formLogin.onsubmit;
+            formLogin.onsubmit = function(e) {
+                e.preventDefault();
+                const login = document.getElementById('login-login').value;
+                const password = document.getElementById('login-password').value;
+                let users;
+                try {
+                    users = JSON.parse(localStorage.getItem('users') || '[]');
+                    if (!Array.isArray(users)) users = [];
+                } catch(e) { users = []; }
+                const user = users.find(u => u.login === login && u.password === password);
+                if (user) {
+                    if (user.balance === undefined) user.balance = 0;
+                    localStorage.setItem('isAuth', 'true');
+                    localStorage.setItem('userId', user.id);
+                    localStorage.setItem('userLogin', user.login);
+                    setCurrentUser(user);
+                    if (user.role === 'admin' && adminBtn) adminBtn.style.display = '';
+                    else if (adminBtn) adminBtn.style.display = 'none';
+                    modalAuth.classList.remove('show');
+                    loginError.textContent = '';
+                    showToast('Вы успешно вошли!', 'success');
+                    updateBalanceUI();
+                } else {
+                    loginError.textContent = 'Неверный логин или пароль';
+                    showToast('Неверный логин или пароль', 'error');
+                }
+            };
+        }
+        // --- При загрузке страницы обновляем баланс ---
+        updateBalanceUI();
+        // --- Открытие модального окна пополнения ---
+        const topupLink = document.querySelector('.top-link');
+        const modalTopup = document.getElementById('modal-topup');
+        const closeTopup = document.getElementById('close-topup');
+        if (topupLink && modalTopup) {
+            topupLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                modalTopup.style.display = 'flex';
+                document.getElementById('topup-amount').value = '';
+                document.getElementById('topup-error').textContent = '';
+            });
+        }
+        if (closeTopup && modalTopup) {
+            closeTopup.onclick = function() { modalTopup.style.display = 'none'; };
+        }
+        // Закрытие по клику вне формы
+        if (modalTopup) {
+            modalTopup.addEventListener('mousedown', function(e) {
+                if (e.target === modalTopup) modalTopup.style.display = 'none';
+            });
+        }
+        // --- Обработка формы пополнения ---
+        const formTopup = document.getElementById('form-topup');
+        if (formTopup) {
+            formTopup.onsubmit = function(e) {
+                e.preventDefault();
+                const amountInput = document.getElementById('topup-amount');
+                const method = document.getElementById('topup-method').value;
+                const errorDiv = document.getElementById('topup-error');
+                let amount = parseFloat(amountInput.value.replace(',', '.'));
+                if (isNaN(amount) || amount <= 0) {
+                    errorDiv.textContent = 'Введите корректную сумму';
+                    return;
+                }
+                if (amount > 99999) {
+                    errorDiv.textContent = 'Максимальная сумма — 99999₽';
+                    return;
+                }
+                // Имитация успешного пополнения
+                let user = getCurrentUser();
+                if (!user) {
+                    errorDiv.textContent = 'Ошибка: пользователь не найден';
+                    return;
+                }
+                user.balance = (parseFloat(user.balance) || 0) + amount;
+                setCurrentUser(user);
+                updateBalanceUI();
+                showToast('Баланс успешно пополнен на ' + amount.toFixed(2) + '₽', 'success');
+                modalTopup.style.display = 'none';
+            };
+        }
+        // Быстрые кнопки суммы
+        document.addEventListener('click', function(e) {
+            if (e.target.classList && e.target.classList.contains('topup-quick-btn')) {
+                const val = e.target.getAttribute('data-amount');
+                const input = document.getElementById('topup-amount');
+                if (input) input.value = val;
+            }
+        });
+
+        // --- Обработка кнопок заказа тарифов ---
+        document.addEventListener('click', function(e) {
+            const orderBtn = e.target.closest('.tariff-order');
+            if (!orderBtn) return;
+            
+            const card = orderBtn.closest('.tariff-card');
+            if (!card) return;
+            
+            const title = card.querySelector('.tariff-title').textContent;
+            const price = card.querySelector('.tariff-price').textContent;
+            const features = Array.from(card.querySelectorAll('ul li')).map(li => li.textContent);
+            
+            // Заполняем информацию в модальном окне
+            document.getElementById('order-tariff-name').textContent = title;
+            document.getElementById('order-tariff-price').textContent = price;
+            document.getElementById('order-tariff-period').textContent = document.querySelector('.tariff-btn-active').textContent;
+            
+            const featuresList = document.getElementById('order-tariff-features');
+            featuresList.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                li.style.marginBottom = '4px';
+                featuresList.appendChild(li);
+            });
+            
+            // Обновляем баланс пользователя
+            const user = getCurrentUser();
+            const balance = user && user.balance ? parseFloat(user.balance) : 0;
+            document.getElementById('order-user-balance').textContent = balance.toFixed(2) + ' ₽';
+            
+            // Показываем модальное окно
+            document.getElementById('modal-order').style.display = 'flex';
+        });
+        
+        // Закрытие модального окна заказа
+        const closeOrder = document.getElementById('close-order');
+        const modalOrder = document.getElementById('modal-order');
+        if (closeOrder && modalOrder) {
+            closeOrder.onclick = function() { modalOrder.style.display = 'none'; };
+        }
+        
+        // Закрытие по клику вне формы
+        if (modalOrder) {
+            modalOrder.addEventListener('mousedown', function(e) {
+                if (e.target === modalOrder) modalOrder.style.display = 'none';
+            });
+        }
+        
+        // Обработка оплаты с баланса
+        const payWithBalance = document.getElementById('pay-with-balance');
+        if (payWithBalance) {
+            payWithBalance.onclick = function() {
+                const user = getCurrentUser();
+                if (!user) {
+                    showToast('Ошибка: пользователь не найден', 'error');
+                    return;
+                }
+                
+                const priceText = document.getElementById('order-tariff-price').textContent;
+                const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                
+                if (user.balance < price) {
+                    showToast('Недостаточно средств на балансе', 'error');
+                    return;
+                }
+                
+                user.balance -= price;
+                setCurrentUser(user);
+                updateBalanceUI();
+                handleServerPurchase();
+                modalOrder.style.display = 'none';
+                showToast('Тариф успешно оплачен с баланса!', 'success');
+            };
+        }
+        
+        // Обработка оплаты другими способами
+        const payWithMethod = document.getElementById('pay-with-method');
+        if (payWithMethod) {
+            payWithMethod.onclick = function() {
+                const method = document.getElementById('order-payment-method').value;
+                const priceText = document.getElementById('order-tariff-price').textContent;
+                const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                
+                // Имитация успешной оплаты
+                handleServerPurchase();
+                modalOrder.style.display = 'none';
+                showToast('Оплата через ' + method + ' успешно выполнена!', 'success');
+            };
+        }
+
+        // Переключение между способами оплаты
+        const showOtherPayments = document.getElementById('show-other-payments');
+        const orderPaymentMethods = document.getElementById('order-payment-methods');
+        if (showOtherPayments && orderPaymentMethods) {
+            showOtherPayments.onclick = function(e) {
+                e.preventDefault();
+                orderPaymentMethods.style.display = 'block';
+                showOtherPayments.style.display = 'none';
+            };
+        }
+
+        // --- Сохранение купленного сервера ---
+        function addServerToUser(server) {
+            let users = [];
+            try {
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (!Array.isArray(users)) users = [];
+            } catch(e) { users = []; }
+            const login = localStorage.getItem('userLogin');
+            const idx = users.findIndex(u => u.login === login);
+            if (idx !== -1) {
+                if (!users[idx].servers) users[idx].servers = [];
+                users[idx].servers.push(server);
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+        // --- Отображение серверов пользователя ---
+        function renderUserServers() {
+            const user = getCurrentUser();
+            const listDiv = document.getElementById('user-servers-list');
+            if (!listDiv) return;
+            listDiv.innerHTML = '';
+            if (!user || !user.servers || user.servers.length === 0) {
+                listDiv.innerHTML = '<div style="color:#fff;font-size:1.15rem;margin-top:32px;">У вас пока нет серверов</div>';
+                return;
+            }
+            user.servers.forEach((srv, i) => {
+                const block = document.createElement('div');
+                block.className = 'user-server-card';
+                block.style = 'background:#181f2a;border-radius:18px;box-shadow:0 0 18px 2px #2196f399,0 0 0 2px #338cff22;border:2px solid #23242a;padding:18px 24px 14px 24px;color:#fff;margin-bottom:18px;text-align:left;display:flex;align-items:center;gap:24px;min-width:340px;position:relative;';
+                // Моковые данные для примера
+                const status = '<span style="background:#2ecc40;color:#fff;border-radius:6px;padding:2px 10px;font-size:0.98rem;margin-left:8px;">🟢 Запущен</span>';
+                const serverId = 8000 + i;
+                const ip = `212.74.249.163:28${100+i}`;
+                const players = `${Math.floor(Math.random()*3)}/10`;
+                const cpu = `${(Math.random()*100).toFixed(2)}%`;
+                const ram = `${(6+Math.random()*2).toFixed(1)}/10 ГБ`;
+                block.innerHTML = `
+                    <img src="img/rust.jpg" alt="Rust" style="width:48px;height:48px;border-radius:12px;margin-right:18px;object-fit:cover;">
+                    <div style="flex:1;min-width:180px;">
+                        <div style="font-size:1.13rem;font-weight:700;color:#338cff;">${srv.name} <span style="color:#aaa;font-size:0.98rem;">ID:${serverId}</span> ${status}</div>
+                        <div style="color:#aaa;font-size:0.98rem;margin:2px 0 6px 0;">${ip}</div>
+                        <div style="display:flex;gap:12px;margin-bottom:6px;">
+                            <div style="background:#23242a;border-radius:8px;padding:4px 12px;font-size:0.98rem;display:flex;align-items:center;gap:6px;">
+                                <i class="fas fa-user"></i> ${players}
+                            </div>
+                            <div style="background:#23242a;border-radius:8px;padding:4px 12px;font-size:0.98rem;display:flex;align-items:center;gap:6px;">
+                                <i class="fas fa-microchip"></i> ${cpu}
+                            </div>
+                            <div style="background:#23242a;border-radius:8px;padding:4px 12px;font-size:0.98rem;display:flex;align-items:center;gap:6px;">
+                                <i class="fas fa-memory"></i> ${ram}
+                            </div>
+                        </div>
+                        <div style="color:#aaa;font-size:0.98rem;margin-bottom:4px;">Период: <b>${srv.period}</b> | Цена: <b>${srv.price}</b> | Дата: <b>${srv.date}</b></div>
+                        <div style="color:#aaa;font-size:0.98rem;margin-bottom:4px;">Характеристики: ${srv.features.filter(f => /CPU|RAM|HHD|Ядер|ОЗУ|Памяти|Диск/i.test(f)).join(', ')}</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;min-width:56px;">
+                        <button class="server-manage-btn" style="background:#181f2a;border:2.5px solid #338cff;border-radius:12px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.45rem;color:#338cff;transition:color 0.18s, border 0.18s;"><i class="fas fa-cog"></i></button>
+                        <button style="background:#23242a;color:#338cff;border:none;border-radius:12px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.45rem;"><i class='fas fa-redo' style='font-size:1.5rem;'></i></button>
+                    </div>
+                `;
+                listDiv.appendChild(block);
+            });
+        }
+        // --- Навигация: открытие страницы серверов ---
+        const navServers = document.getElementById('nav-servers');
+        const serversPage = document.getElementById('servers-page');
+        if (navServers && serversPage && mainContent && profilePage && tariffsPage) {
+            navServers.onclick = function(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none';
+                profilePage.style.display = 'none';
+                tariffsPage.style.display = 'none';
+                serversPage.style.display = '';
+                if (adminProfilePage) adminProfilePage.style.display = 'none'; // <-- добавлено
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                navServers.classList.add('active');
+                renderUserServers();
+            };
+        }
+        // --- После покупки добавлять сервер ---
+        function handleServerPurchase() {
+            const name = document.getElementById('order-tariff-name').textContent;
+            const price = document.getElementById('order-tariff-price').textContent;
+            const period = document.getElementById('order-tariff-period').textContent;
+            const features = Array.from(document.getElementById('order-tariff-features').querySelectorAll('li')).map(li => li.textContent);
+            const date = new Date().toLocaleString('ru-RU');
+            addServerToUser({name, price, period, features, date});
+        }
+        // --- При входе на страницу серверов сразу отображаем ---
+        if (window.location.hash === '#servers') {
+            if (navServers) navServers.click();
+        }
+    };
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('tariff-slider');
+        const leftBtn = document.getElementById('tariff-left');
+        const rightBtn = document.getElementById('tariff-right');
+        const cards = slider.querySelectorAll('.rust-tariff-btn');
+        let current = 0;
+        let scrollInterval;
+        const scrollSpeed = 20; // Скорость прокрутки в пикселях за интервал
+        const scrollIntervalTime = 20; // Интервал обновления в миллисекундах
+
+        // --- Drag-to-scroll ---
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let wasDragged = false;
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.getBoundingClientRect().left;
+            scrollLeft = slider.scrollLeft;
+            wasDragged = false;
+            slider.style.cursor = 'grabbing';
+            slider.style.scrollBehavior = 'auto';
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.getBoundingClientRect().left;
+            const walk = x - startX;
+            slider.scrollLeft = scrollLeft - walk;
+            wasDragged = true;
+        });
+        document.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+            setTimeout(() => { wasDragged = false; }, 50);
+            slider.style.cursor = '';
+            slider.style.scrollBehavior = 'smooth';
+        });
+
+        // Функция для непрерывной прокрутки
+        function startScrolling(direction) {
+            if (scrollInterval) return; // Если уже есть интервал, не создаем новый
+            
+            scrollInterval = setInterval(() => {
+                slider.scrollLeft += direction * scrollSpeed;
+            }, scrollIntervalTime);
+        }
+
+        // Остановка прокрутки
+        function stopScrolling() {
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
+        }
+
+        // Обработчики для кнопок
+        leftBtn.addEventListener('mousedown', () => {
+            startScrolling(-1);
+        });
+
+        rightBtn.addEventListener('mousedown', () => {
+            startScrolling(1);
+        });
+
+        // Останавливаем прокрутку при отпускании кнопки
+        document.addEventListener('mouseup', () => {
+            stopScrolling();
+        });
+
+        // Останавливаем прокрутку при уходе курсора с кнопки
+        leftBtn.addEventListener('mouseleave', () => {
+            stopScrolling();
+        });
+
+        rightBtn.addEventListener('mouseleave', () => {
+            stopScrolling();
+        });
+
+        function centerCard(idx) {
+            const card = cards[idx];
+            const sliderRect = slider.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+            const scrollLeft = slider.scrollLeft;
+            const offset = cardRect.left - sliderRect.left - (sliderRect.width/2 - cardRect.width/2);
+            slider.scrollTo({left: scrollLeft + offset, behavior: 'smooth'});
+            current = idx;
+        }
+
+        cards.forEach((card, idx) => {
+            card.addEventListener('click', (e) => {
+                if (!wasDragged) {
+                    centerCard(idx);
+                }
+            });
+        });
+
+        // --- Подсветка активной кнопки и показ меню тарифов ---
+        const tariffBtns = document.querySelectorAll('.rust-tariff-btn');
+        const rustMenuWeek = document.getElementById('tariff-menu-rust-week');
+        const rustMenuMonth = document.getElementById('tariff-menu-rust-month');
+        const periodBtns = document.querySelectorAll('.tariff-action-btn');
+        // Скрываем тарифы по умолчанию
+        rustMenuWeek.style.display = 'none';
+        rustMenuMonth.style.display = 'none';
+        tariffBtns.forEach((btn, idx) => {
+            btn.addEventListener('click', function() {
+                // Снимаем подсветку со всех
+                tariffBtns.forEach(b => b.classList.remove('tariff-btn-active'));
+                // Снимаем подсветку с кнопок периода
+                periodBtns.forEach(b => b.classList.remove('tariff-btn-active'));
+                
+                // Выбираем "1 неделя" по умолчанию
+                const weekBtn = document.querySelector('.tariff-action-btn');
+                if (weekBtn) {
+                    weekBtn.classList.add('tariff-btn-active');
+                }
+
+                if (idx === 0) {
+                    btn.classList.add('tariff-btn-active');
+                    // Скрываем ВСЕ тарифы!
+                    rustMenuWeek.style.display = 'none';
+                    rustMenuMonth.style.display = 'none';
+                    const week2 = document.getElementById('tariff-menu-rust-week-2');
+                    const week3 = document.getElementById('tariff-menu-rust-week-3');
+                    const week4 = document.getElementById('tariff-menu-rust-week-4');
+                    const month2 = document.getElementById('tariff-menu-rust-month-2');
+                    const month3 = document.getElementById('tariff-menu-rust-month-3');
+                    const month4 = document.getElementById('tariff-menu-rust-month-4');
+                    if (week2) week2.style.display = 'none';
+                    if (week3) week3.style.display = 'none';
+                    if (week4) week4.style.display = 'none';
+                    if (month2) month2.style.display = 'none';
+                    if (month3) month3.style.display = 'none';
+                    if (month4) month4.style.display = 'none';
+                    
+                    // Показываем недельные тарифы для Rust
+                    rustMenuWeek.style.display = 'flex';
+                    if (week2) week2.style.display = 'flex';
+                    if (week3) week3.style.display = 'flex';
+                    if (week4) week4.style.display = 'flex';
+                } else {
+                    // Other games: hide Rust menu
+                    rustMenuWeek.style.display = 'none';
+                    rustMenuMonth.style.display = 'none';
+                    const week2 = document.getElementById('tariff-menu-rust-week-2');
+                    const week3 = document.getElementById('tariff-menu-rust-week-3');
+                    const week4 = document.getElementById('tariff-menu-rust-week-4');
+                    if (week2) week2.style.display = 'none';
+                    if (week3) week3.style.display = 'none';
+                    if (week4) week4.style.display = 'none';
+                }
+            });
+        });
+
+        // Клик по кнопкам периода
+        periodBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                periodBtns.forEach(b => b.classList.remove('tariff-btn-active'));
+                btn.classList.add('tariff-btn-active');
+                const weekBlocks = document.querySelectorAll('[id^="tariff-menu-rust-week"], .tariff-menu.extra-tariffs:not([id*="month"])');
+                const monthBlocks = document.querySelectorAll('[id^="tariff-menu-rust-month"]');
+                if (btn.textContent.includes('неделя')) {
+                    weekBlocks.forEach(el => el.style.display = 'flex');
+                    monthBlocks.forEach(el => el.style.display = 'none');
+                } else {
+                    weekBlocks.forEach(el => el.style.display = 'none');
+                    monthBlocks.forEach(el => el.style.display = 'flex');
+                }
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.tariff-action-btn');
+            if (!btn) return;
+            const periodBtns = document.querySelectorAll('.tariff-action-btn');
+            periodBtns.forEach(b => b.classList.remove('tariff-btn-active'));
+            btn.classList.add('tariff-btn-active');
+            const weekBlocks = document.querySelectorAll('[id^="tariff-menu-rust-week"], .tariff-menu.extra-tariffs:not([id*="month"])');
+            const monthBlocks = document.querySelectorAll('[id^="tariff-menu-rust-month"]');
+            if (btn.textContent.includes('неделя')) {
+                weekBlocks.forEach(el => el.style.display = 'flex');
+                monthBlocks.forEach(el => el.style.display = 'none');
+            } else {
+                weekBlocks.forEach(el => el.style.display = 'none');
+                monthBlocks.forEach(el => el.style.display = 'flex');
+            }
+        });
+    });
+
+    // Универсальная функция для показа toast-уведомлений (до 3 одновременно)
+    function showToast(message, type = 'success') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+        // Ограничение: максимум 3 уведомления
+        if (container.children.length >= 3) {
+            // Удаляем самое старое
+            container.removeChild(container.firstChild);
+        }
+        const toast = document.createElement('div');
+        toast.className = 'custom-toast';
+        toast.style.minWidth = '320px';
+        toast.style.maxWidth = '90vw';
+        toast.style.background = '#181f2a';
+        toast.style.borderRadius = '22px';
+        toast.style.padding = '22px 32px 18px 32px';
+        toast.style.fontWeight = '700';
+        toast.style.fontSize = '1.08rem';
+        toast.style.textAlign = 'center';
+        toast.style.transition = 'opacity 0.3s';
+        toast.style.opacity = '0';
+        toast.style.pointerEvents = 'auto';
+        // Только 'success' — зелёный, всё остальное — красный
+        if (type === 'success') {
+            toast.style.color = '#2ecc40';
+            toast.style.border = '2px solid #2ecc40';
+            toast.style.boxShadow = '0 0 48px 8px #2ecc4099,0 0 0 2px #2ecc40';
+        } else {
+            toast.style.color = '#ff5252';
+            toast.style.border = '2px solid #ff5252';
+            toast.style.boxShadow = '0 0 48px 8px #ff525299,0 0 0 2px #ff5252';
+        }
+        toast.textContent = message;
+        container.appendChild(toast);
+        setTimeout(() => { toast.style.opacity = '1'; }, 10);
+        // Закрытие по клику
+        let timeoutId = setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 400);
+        }, 8000);
+        toast._timeoutId = timeoutId;
+        toast.addEventListener('click', function() {
+            if (toast._timeoutId) {
+                clearTimeout(toast._timeoutId);
+                toast._timeoutId = null;
+            }
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 400);
+        });
+    }
+
+    // Кнопка "назад" в окне заказа
+    const backOrder = document.getElementById('back-order');
+    const modalOrder = document.getElementById('modal-order');
+    if (backOrder && modalOrder) {
+        backOrder.onclick = function() {
+            modalOrder.style.display = 'none';
+            // Открываем окно пополнения баланса
+            if (typeof modalTopup !== 'undefined' && modalTopup) {
+                modalTopup.style.display = 'flex';
+            }
+        };
+    }
+    // После renderUserServers добавляю обработчик:
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.server-manage-btn');
+        if (!btn) return;
+        const idx = btn.getAttribute('data-server-idx');
+        alert('Открыть панель управления сервером #' + idx);
+    });
+    // После renderUserServers добавляю обработчик для .server-settings-btn:
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.server-settings-btn');
+        if (!btn) return;
+        document.getElementById('modal-manage-server').style.display = 'flex';
+    });
+    // Закрытие модального окна управления сервером
+    document.getElementById('close-manage-server').onclick = function() {
+        document.getElementById('modal-manage-server').style.display = 'none';
+    };
+    // Закрытие по клику вне окна
+    document.getElementById('modal-manage-server').addEventListener('mousedown', function(e) {
+        if (e.target === this) this.style.display = 'none';
+    });
+    // Кнопка "Открыть панель управления" теперь просто закрывает окно (или можешь оставить пустым)
+    document.querySelector('#form-manage-server button[type="button"]').onclick = function() {
+        document.getElementById('modal-manage-server').style.display = 'none';
+    };
+    </script>
+    <!-- Админ-профиль (как profile-page) -->
+    <div class="admin-profile-page" id="admin-profile-page" style="display:none;">
+      <div class="profile-card">
+        <div class="profile-row" style="flex-direction:column;align-items:center;gap:32px;">
+          <div style="font-size:2rem;font-weight:900;color:#338cff;text-align:center;margin-bottom:18px;">Удалить профиль</div>
+          <div style="display:flex;flex-direction:column;gap:18px;width:100%;max-width:320px;align-items:center;">
+            <input id="user-search" type="text" placeholder="Поиск по нику или ID" style="width:100%;padding:12px 16px;border-radius:12px;border:2px solid #338cff;background:#181f2a;color:#fff;font-size:1.08rem;outline:none;">
+            <select id="user-select" style="width:100%;padding:12px 16px;border-radius:12px;border:2px solid #338cff;background:#181f2a;color:#fff;font-size:1.08rem;outline:none;">
+              <option value="">Выберите пользователя</option>
+            </select>
+          </div>
+          <button id="admin-profile-back" class="btn-blue" style="width:100%;max-width:320px;font-size:1.13rem;">Удалить</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    const adminBtn = document.getElementById('admin-btn');
+    const adminProfilePage = document.getElementById('admin-profile-page');
+    const adminProfileBack = document.getElementById('admin-profile-back');
+    const mainContent = document.getElementById('main-content');
+    const tariffsPage = document.getElementById('tariffs-page');
+    const serversPage = document.getElementById('servers-page');
+    const profilePage = document.getElementById('profile-page');
+    const userSelect = document.getElementById('user-select');
+    function isAdmin() {
+      let users = [];
+      try {
+        users = JSON.parse(localStorage.getItem('users') || '[]');
+        if (!Array.isArray(users)) users = [];
+      } catch(e) { users = []; }
+      const login = localStorage.getItem('userLogin');
+      const user = users.find(u => u.login === login);
+      return user && user.role === 'admin';
+    }
+    function fillUserSelect() {
+      if (!userSelect) return;
+      userSelect.innerHTML = '<option value="">Выберите пользователя</option>';
+      fetch('https://blue-hosting.ru/api/users')
+        .then(res => res.json())
+        .then(users => {
+      users.forEach(u => {
+        userSelect.innerHTML += `<option value="${u.id}" data-login="${u.login}">${u.login} (${u.id})</option>`;
+          });
+        })
+        .catch(err => {
+          userSelect.innerHTML = '<option value="">Ошибка загрузки пользователей</option>';
+      });
+    }
+    if (adminBtn) {
+      adminBtn.style.display = isAdmin() ? '' : 'none';
+    }
+    if (adminBtn && adminProfilePage) {
+      adminBtn.onclick = function(e) {
+        e.preventDefault();
+        if (!isAdmin()) return;
+        if (mainContent) mainContent.style.display = 'none';
+        if (tariffsPage) tariffsPage.style.display = 'none';
+        if (serversPage) serversPage.style.display = 'none';
+        if (profilePage) profilePage.style.display = 'none';
+        adminProfilePage.style.display = '';
+        fillUserSelect();
+      };
+    }
+    if (adminProfileBack && adminProfilePage) {
+      adminProfileBack.onclick = function() {
+        // Получаем выбранного пользователя
+        const userId = userSelect ? userSelect.value : '';
+        if (!userId) {
+          alert('Выберите пользователя для удаления!');
+          return;
+        }
+        // Получаем всех пользователей
+        let users = [];
+        try {
+          users = JSON.parse(localStorage.getItem('users') || '[]');
+          if (!Array.isArray(users)) users = [];
+        } catch(e) { users = []; }
+        // Найти удаляемого пользователя
+        const deletedUser = users.find(u => String(u.id) === String(userId));
+        // Удаляем пользователя по id
+        users = users.filter(u => String(u.id) !== String(userId));
+        localStorage.setItem('users', JSON.stringify(users));
+        // Если удаляемый пользователь совпадает с текущим авторизованным — разлогинить
+        if (deletedUser && localStorage.getItem('userLogin') === deletedUser.login) {
+          localStorage.removeItem('isAuth');
+          localStorage.removeItem('userId');
+          localStorage.removeItem('userLogin');
+          showToast('Вы были разлогинены, так как ваш аккаунт удалён!', 'error');
+          setTimeout(() => location.reload(), 1200);
+        }
+        // Очищаем выбор
+        if (userSelect) userSelect.value = '';
+        if (userSearch) userSearch.value = '';
+        fillUserSelect();
+        alert('Пользователь успешно удалён!');
+      };
+    }
+    // Автозаполнение поиска при выборе пользователя
+    const userSearch = document.getElementById('user-search');
+    if (userSelect && userSearch) {
+      userSelect.addEventListener('change', function() {
+        const selected = userSelect.options[userSelect.selectedIndex];
+        const login = selected.getAttribute('data-login');
+        if (login) userSearch.value = login;
+        else userSearch.value = '';
+      });
+    }
+    </script>
+    <!-- Модальное окно управления сервером (в стиле окна входа) -->
+    <div class="modal-auth" id="modal-manage-server" style="display:none;">
+      <div class="modal-auth-content" style="position:relative;">
+        <span class="custom-modal-close" id="close-manage-server" style="position:absolute;top:16px;right:22px;font-size:2rem;color:#338cff;cursor:pointer;">&times;</span>
+        <div style="font-size:1.3rem;font-weight:700;color:#2196f3;text-align:center;margin-bottom:18px;">Управление сервером</div>
+        <div style="color:#fff;text-align:center;margin-bottom:24px;">Здесь будут функции управления сервером...</div>
+        <div style="display:flex;justify-content:center;gap:18px;">
+          <button id="server-manage-btn" class="btn-blue" style="min-width:140px;font-size:1.08rem;font-weight:700;padding:12px 32px;border-radius:12px;">Управление</button>
+          <button id="server-support-btn" style="min-width:140px;font-size:1.08rem;font-weight:700;padding:12px 32px;border-radius:12px;background:#23242a;color:#338cff;border:2px solid #338cff;">Поддержка</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    // Открытие модального окна управления сервером
+    if (document.getElementById('modal-manage-server')) {
+      document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.server-manage-btn');
+        if (!btn) return;
+        document.getElementById('modal-manage-server').style.display = 'flex';
+      });
+      // Закрытие по крестику
+      document.getElementById('close-manage-server').onclick = function() {
+        document.getElementById('modal-manage-server').style.display = 'none';
+      };
+      // Закрытие по клику вне окна
+      document.getElementById('modal-manage-server').addEventListener('mousedown', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    }
+    </script>
+    <script>
+    // ... существующий код ...
+    if (document.getElementById('server-manage-btn')) {
+      document.getElementById('server-manage-btn').onclick = function() {
+        window.open('http://panel-blue-hosting.ru', '_blank');
+      };
+    }
+    // ... существующий код ...
+    </script>
+    <script>
+    // Получаем имя и первую букву админа для чата поддержки
+    function getAdminName() {
+      let users = [];
+      try {
+        users = JSON.parse(localStorage.getItem('users') || '[]');
+        if (!Array.isArray(users)) users = [];
+      } catch(e) { users = []; }
+      const admin = users.find(u => u.login === 'admin');
+      return admin ? (admin.name || admin.login || 'Поддержка') : 'Поддержка';
+    }
+    function getAdminLetter() {
+      let users = [];
+      try {
+        users = JSON.parse(localStorage.getItem('users') || '[]');
+        if (!Array.isArray(users)) users = [];
+      } catch(e) { users = []; }
+      const admin = users.find(u => u.login === 'admin');
+      const name = admin ? (admin.name || admin.login || 'S') : 'S';
+      return name.charAt(0).toUpperCase();
+    }
+    // Сохраняем пользователей, которые писали в поддержку
+    function addSupportChatUser(login) {
+      if (!login || login === 'admin') return;
+      let users = [];
+      try {
+        users = JSON.parse(localStorage.getItem('supportChatUsers') || '[]');
+        if (!Array.isArray(users)) users = [];
+      } catch(e) { users = []; }
+      if (!users.includes(login)) {
+        users.push(login);
+        localStorage.setItem('supportChatUsers', JSON.stringify(users));
+      }
+    }
+    // Для админа: обработка клика по чату и хранение переписок по пользователям
+    function getCurrentChatUser() {
+      return localStorage.getItem('adminCurrentChatUser') || '';
+    }
+    function setCurrentChatUser(login) {
+      localStorage.setItem('adminCurrentChatUser', login);
+    }
+    function getAdminChatKey(login) {
+      return 'supportChat_' + login;
+    }
+    // --- Новый универсальный рендер чата через backend ---
+    async function renderSupportChat() {
+      const userLogin = localStorage.getItem('userLogin');
+      let chat = [];
+      let currentUser = '';
+      if (userLogin === 'admin') {
+        currentUser = getCurrentChatUser();
+        if (currentUser) {
+          chat = await fetchChatHistory(currentUser);
+        }
+      } else {
+        chat = await fetchChatHistory(userLogin);
+      }
+      const messagesDiv = document.getElementById('support-chat-messages');
+      if (!messagesDiv) return;
+      messagesDiv.innerHTML = '';
+      chat.forEach(msg => {
+        const div = document.createElement('div');
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        if (userLogin === 'admin') {
+          div.style.alignItems = msg.from === 'support' ? 'flex-end' : 'flex-start';
+        } else {
+          div.style.alignItems = msg.from === 'user' ? 'flex-end' : 'flex-start';
+        }
+        let author = '';
+        if (userLogin === 'admin') {
+          author = msg.from === 'user' ? `<span style='color:#338cff;font-size:0.98rem;font-weight:700;margin-bottom:2px;align-self:flex-start;'>${currentUser}:</span>` : `<span style='color:#aaa;font-size:0.98rem;font-weight:700;margin-bottom:2px;align-self:flex-end;'>Вы:</span>`;
+        }
+        div.innerHTML = `${author}<div style="max-width:70%;padding:12px 18px;border-radius:14px;background:${msg.from==='user'?'#23242a':'#338cff'};color:${msg.from==='user'?'#bfc9db':'#fff'};font-size:1.08rem;box-shadow:0 0 12px #338cff22;">${msg.text}</div>`;
+        messagesDiv.appendChild(div);
+      });
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      updateSupportChatTitle();
+    }
+    // --- Новый универсальный рендер списка чатов для админа через backend ---
+    async function renderSupportChatList() {
+      const chatList = document.getElementById('support-chat-list');
+      if (!chatList) return;
+      const userLogin = localStorage.getItem('userLogin');
+      let html = '<div style="font-size:1.18rem;font-weight:700;color:#338cff;padding:0 24px 18px 24px;">Чаты</div>';
+      if (userLogin === 'admin') {
+        let users = [];
+        try {
+          users = JSON.parse(localStorage.getItem('supportChatUsers') || '[]');
+          if (!Array.isArray(users)) users = [];
+        } catch(e) { users = []; }
+        let unread = {};
+        try {
+          unread = JSON.parse(localStorage.getItem('supportChatUnread') || '{}');
+        } catch(e) { unread = {}; }
+        if (users.length === 0) {
+          html += '<div style="color:#aaa;padding:18px 24px;">Нет обращений</div>';
+        } else {
+          let current = getCurrentChatUser();
+          if (!current || !users.includes(current)) {
+            current = users[0];
+            setCurrentChatUser(current);
+          }
+          for (const login of users) {
+            const letter = login.charAt(0).toUpperCase();
+            let chat = await fetchChatHistory(login);
+            const msgCount = chat.length;
+            html += `<div class="support-chat-item${login===current?' active':''}" data-login="${login}" style="padding:12px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;background:#23242a;border-radius:12px;margin:0 12px 8px 12px;position:relative;">
+              <span style="background:#338cff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:1.3rem;font-weight:900;">${letter}</span>
+              <div>
+                <div style="font-weight:700;color:#fff;">${login}</div>
+                <div style="font-size:0.98rem;color:#bfc9db;">Онлайн</div>
+              </div>
+              <span style="position:absolute;right:12px;top:12px;width:22px;height:22px;background:#ff5252;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.98rem;font-weight:700;">${msgCount}</span>
+              ${unread[login] ? '<span style="position:absolute;right:12px;top:38px;width:10px;height:10px;background:#ff5252;border-radius:50%;"></span>' : ''}
+            </div>`;
+          }
+        }
+      } else {
+        let chat = await fetchChatHistory(userLogin);
+        const msgCount = chat.length;
+        html += `<div class="support-chat-item active" style="padding:12px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;background:#23242a;border-radius:12px;margin:0 12px 8px 12px;position:relative;">
+          <span style="background:#338cff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:1.3rem;font-weight:900;">A</span>
+          <div>
+            <div style="font-weight:700;color:#fff;">admin</div>
+            <div style="font-size:0.98rem;color:#bfc9db;">Онлайн</div>
+          </div>
+          <span style="position:absolute;right:12px;top:12px;width:22px;height:22px;background:#ff5252;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.98rem;font-weight:700;">${msgCount}</span>
+        </div>`;
+      }
+      chatList.innerHTML = html;
+      // Для админа: обработка клика по чату
+      if (userLogin === 'admin') {
+        chatList.querySelectorAll('.support-chat-item').forEach(item => {
+          item.onclick = function() {
+            const login = this.getAttribute('data-login');
+            setCurrentChatUser(login);
+            let unread = JSON.parse(localStorage.getItem('supportChatUnread') || '{}');
+            unread[login] = false;
+            localStorage.setItem('supportChatUnread', JSON.stringify(unread));
+            renderSupportChatList();
+            renderSupportChat();
+            updateSupportChatTitle();
+          };
+        });
+      }
+      updateSupportChatTitle();
+    }
+    // --- Новый обработчик отправки сообщения через backend ---
+    const supportChatForm = document.getElementById('support-chat-form');
+    supportChatForm.onsubmit = async function(e) {
+      e.preventDefault();
+      const input = document.getElementById('support-chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      const userLogin = localStorage.getItem('userLogin');
+      let toUser = userLogin;
+      if (userLogin === 'admin') {
+        toUser = getCurrentChatUser();
+        if (!toUser) return;
+      }
+      const msg = {
+        from: userLogin === 'admin' ? 'support' : 'user',
+        text,
+        date: new Date().toLocaleString('ru-RU')
+      };
+      await sendMessage(toUser, msg);
+      input.value = '';
+      renderSupportChat();
+      renderSupportChatList();
+    };
+    // ... существующий код ...
+    </script>
+    <script>
+    // Гарантированный обработчик для кнопки 'Поддержка'
+    document.addEventListener('DOMContentLoaded', function() {
+      var navSupport = document.getElementById('nav-support');
+      if (navSupport) {
+        navSupport.addEventListener('click', function(e) {
+          e.preventDefault();
+          var supportPage = document.getElementById('support-page');
+          if (supportPage) {
+            supportPage.style.display = '';
+            console.log('Открыт раздел поддержки!');
+          } else {
+            console.log('Не найден #support-page');
+          }
+          // Скрываем остальные страницы
+          var ids = ['main-content','tariffs-page','servers-page','profile-page'];
+          ids.forEach(function(id){
+            var el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+          });
+          // Активируем пункт меню
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          navSupport.classList.add('active');
+          // Рендерим чат
+          if (typeof renderSupportChatList === 'function') renderSupportChatList();
+          if (typeof renderSupportChat === 'function') renderSupportChat();
+          if (typeof updateSupportChatTitle === 'function') updateSupportChatTitle();
+        });
+      }
+    });
+    </script>
+    <script>
+    // ... existing code ...
+    // После загрузки страницы сразу рендерим чаты для админа
+    window.addEventListener('DOMContentLoaded', function() {
+      const userLogin = localStorage.getItem('userLogin');
+      if (userLogin === 'admin') {
+        renderSupportChatList();
+        renderSupportChat();
+      }
+    });
+    // ... existing code ...
+    </script>
+    <script>
+    // Функция для обновления заголовка чата поддержки
+    function updateSupportChatTitle() {
+      const chatTitle = document.getElementById('support-chat-title');
+      const userLogin = localStorage.getItem('userLogin');
+      if (userLogin === 'admin') {
+        const current = localStorage.getItem('adminCurrentChatUser');
+        if (chatTitle && current) chatTitle.textContent = current + ' Онлайн';
+      } else {
+        if (chatTitle) chatTitle.textContent = 'Чат поддержки';
+      }
+    }
+    // ... existing code ...
+    </script>
+    <script>
+    const CHAT_API = 'http://blue-hosting.ru:3001'; // Используем ваш реальный домен
+
+    // Получить историю чата
+    async function fetchChatHistory(userLogin) {
+      const res = await fetch(`${CHAT_API}/chat/${userLogin}`);
+      return await res.json();
+    }
+
+    // Отправить сообщение
+    async function sendMessage(userLogin, msg) {
+      await fetch(`${CHAT_API}/chat/${userLogin}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(msg)
+      });
+    }
+    </script>
+</body>
+</html> 
